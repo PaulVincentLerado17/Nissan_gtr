@@ -15,8 +15,18 @@
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
 
 
-        <a-light type="ambient" color="#ffffff" intensity="1.5"></a-light>
-    <a-light type="directional" color="#ffffff" intensity="2" position="2 4 3"></a-light>
+            <!-- Studio Lighting Setup -->
+    <a-light type="ambient" color="#ffffff" intensity="2"></a-light>
+    <a-light type="hemisphere" color="#ffffff" groundColor="#bbbbbb" intensity="1.5"></a-light>
+
+    <!-- Key Light (Main light source) -->
+    <a-light type="directional" color="#ffffff" intensity="3" position="-2 4 3" castShadow="true"></a-light>
+    
+    <!-- Fill Light (Softens shadows) -->
+    <a-light type="directional" color="#ffffff" intensity="2" position="2 4 -3"></a-light>
+    
+    <!-- Back Light (Adds depth) -->
+    <a-light type="directional" color="#ffffff" intensity="1.5" position="0 6 2"></a-light>
 
         
         <!-- Assets should be a direct child of a-scene -->
@@ -26,7 +36,7 @@
 
         <!-- Cube Marker -->
         <a-marker type="pattern" url="./car.patt">
-            <a-entity gltf-model="#scene" position="0 0 0" scale="50 50 50"></a-entity>
+            <a-entity gltf-model="#scene" position="0 0 0" scale="80 80 80"></a-entity>
         </a-marker>
 
         <!-- Camera -->
